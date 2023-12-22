@@ -1,38 +1,186 @@
 .App {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #aaa3a3, #ffffff, #a6a8a6);
+}
+
+.carouselContainer{
+  margin-top: 20px;
+}
+
+.carousel {
+  width: 60%; /* Set the desired width */
+  margin: auto; /* Center the Carousel horizontally */
+  border-radius: 55px 55px 55px 55px;
+  overflow: hidden; /* Hide the Carousel items that are outside the viewport */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  outline: rgb(255, 255, 255);
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+.carousel-caption{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+}
+.carousel-caption h5 {
+  color: white; 
+}
+
+.carousel-caption p {
+  color: white; 
+}
+.carousel-item img {
+  width: 100%; 
+  height: 500px; 
+  object-fit: cover;
+}
+
+
+.searchBar{
+  width: 300px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(129, 127, 127);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+::placeholder{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cryptoHeader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cryptoDisplay{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+
+}
+
+.coin{
+  width: 600px;
+  height: 300px;
+  background-color:rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  margin: 10px;
+  text-align: center;
+  overflow: auto;
+  text-decoration: none;
+  color: white;
   }
-  to {
-    transform: rotate(360deg);
+
+.coin img{
+  width: 100px;
+  height: 100px;
+}
+
+.graph-container{
+  margin-top: 100px;
+}
+
+.graphIcon{
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.graph-coin-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graph-coin-details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 590px;
+  height: 590px;
+  margin-left: 484px;
+  border-radius: 30px;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.exchange_display{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  
+  h3, h1{
+    color: white;
   }
+  .exchange-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 700px;
+    height: 500px;
+    padding: 20px;
+
+  }
+
+  .exchange_header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+  }
+  .exchange_header img{
+    margin-right: 10px;
+  }
+}
+.navbar .navbar-container{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 30px;
+
+}
+
+.graphOnly-whole-container{
+  background-color: white;
+  margin-top: 30px;
+}
+
+
+.home-tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

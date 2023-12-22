@@ -1,0 +1,43 @@
+.rate_display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.rate-component-container{
+    width: 580px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.rate-component-container:hover{
+    cursor: pointer;
+}
+
+.rate-header{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rate-usd{
+    
+    font-size: 1.2em;
+    color: #666;
+}
+
+.searchBar {
+    width: 300px; /* Adjust width as needed */
+    padding: 8px;
+    border: 3px solid #000000; /* Border color */
+    border-radius: 4px;
+    outline: none;
+  }
+
+.search-container{
+    margin-bottom: 20px;
+  }
