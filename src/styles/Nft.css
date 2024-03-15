@@ -1,39 +1,47 @@
-/* Nft.css */
 
 /* Style for the table */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  /* Style for table header cells */
-  th {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  /* Style for table data cells */
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  /* Alternate row background color
-  tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  } */
-  
-  /* Hover effect for rows */
-  tbody tr:hover {
-    background-color: #ffffff;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
 
-  .nft-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* Style for table header cells */
+th {
+  background-color: #f2f2f2; /* Light mode background color */
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style for table data cells */
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Dark mode styles */
+.dark-mode table th {
+  background-color: #333; /* Dark mode background color for table header cells */
+  color: #fff; /* Change text color to white in dark mode */
+}
+
+.dark-mode table td {
+  background-color: #555; /* Dark mode background color for table data cells */
+  color: #fff; /* Change text color to white in dark mode */
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #ffffff; /* Light mode hover background color */
+}
+
+.dark-mode tbody tr:hover {
+  background-color: #666; /* Dark mode hover background color */
+}
+
+.nft-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

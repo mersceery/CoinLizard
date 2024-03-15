@@ -1,3 +1,4 @@
+// App.js
 import './App.css';
 import { useEffect, useState } from 'react';
 import Coin from './components/Coin';
@@ -6,7 +7,12 @@ import HeroSlider from './components/HeroSlider';
 import { coinData } from './data/coinData';
 import Header from './components/Header';
 import HomeTabs from './components/HomeTabs';
-
+import MainPageTable from './components/MainPageTable';
+import MostVisitedTable from './components/MostVisitedTable';
+import FearAndGreenIndex from './components/FearAndGreedIndex';
+import { Link } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
+import ChatTab from './components/ChatTab';
 
 function App() {
   
@@ -14,10 +20,10 @@ function App() {
   const [priceUSD, setPriceUSD] = useState([]);
   const [searchWord, setSearchWord] = useState('');
   const bitcoin = coins.find(crypto => crypto.id === "bitcoin");
-
+  const [isDarkMode, setIsDarkMode] = useLocalStorage("isDark", false); // Add dark mode state
 
   useEffect(() => {
-       coinData()
+    coinData()
       .then((coinData) => {
         setCoins(coinData.trending.data);
         setPriceUSD(coinData.priceBtc);
@@ -25,37 +31,87 @@ function App() {
       .catch((error) => {
         console.error('Error setting coin data:', error);
       });
-    // Set up an interval to fetch data every 10 minutes (600000 milliseconds)
+
     const interval = setInterval(() => {
       coinData();
-    }, 600000); // 600000 milliseconds = 10 minutes
+    }, 600000);
 
-    // Clean up the interval to prevent memory leaks when the component unmounts
     return () => clearInterval(interval);
   }, []);
 
+  const filterCoins = coins.filter((coin) => {
+    return coin.name.toLowerCase().includes(searchWord.toLowerCase());
+  });
 
-    const filterCoins = coins.filter((coin) =>{
-      return coin.name.toLowerCase().includes(searchWord.toLowerCase())
-    })
+    // Toggle dark mode function
+    const toggleDarkMode = () => {
+      setIsDarkMode(!isDarkMode);
+    };
 
   return (
     <>
-    <Header></Header>
-    <div className="App">
-      <div className='carouselContainer'><HeroSlider></HeroSlider></div>
-      {/* <ShowGraph> </ShowGraph> */}
-      <div className='home-tabs-container'><HomeTabs /></div>
-      <div className='cryptoHeader'>
-        <input className='searchBar' type='text' placeholder='Search...' onChange={(event)=>{
-          setSearchWord(event.target.value)
-        }}></input>
+    <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+    <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+    <ChatTab />
+      <div className="App">
+      
+        <div className='carouselContainer'><HeroSlider></HeroSlider></div>
+        <div className='big-whole-table-container'>
+          <div className='whole-table-container'>
+            <MainPageTable className='MainPageTable'></MainPageTable>
+          </div>
+          <div className='whole-table-container'>
+            <MostVisitedTable className='MainPageTable'></MostVisitedTable>
+          </div>
+          <div className='whole-table-container'>
+            <FearAndGreenIndex className='MainPageTable'></FearAndGreenIndex>
+          </div>
+        </div>
+        <div className='home-tabs-container'><HomeTabs /></div>
+        <div className='cryptoHeader'>
+          <input
+            className='searchBar'
+            type='text'
+            placeholder='Search...'
+            onChange={(event) => {
+              setSearchWord(event.target.value);
+            }}
+          ></input>
+        </div>
+        <div className="table-container">
+          <h2>All Coins</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Price in BTC</th>
+                <th>Price in USD</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filterCoins.map((coin) => (
+                <tr key={coin.id}>
+                  <td className='coin-cell'>
+                    <Link to={`/${coin.id}`} className='coin-link'>
+                      <img
+                        src={coin.image}
+                        alt={`${coin.name} Icon`}
+                        className='coin-icon'
+                      />
+                      <span className='coin-name'>{coin.name}</span>
+                    </Link>
+                  </td>
+                  <td>{coin.symbol.toUpperCase()}</td>
+                  <td>{(coin.current_price / bitcoin.current_price).toFixed(12)}</td>
+                  <td>${coin.current_price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div className='cryptoDisplay'>{filterCoins.map((coin=>{
-        return <Coin link={coin.id} name={coin.name} icon={coin.image} priceInBTC={coin.current_price/bitcoin.current_price} priceInUSD={coin.current_price} symbol={coin.symbol}
-        ></Coin>
-      }))}</div>
-    </div>
+      </div>
     </>
   );
 }

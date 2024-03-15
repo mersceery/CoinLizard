@@ -1,43 +1,107 @@
-.rate_display{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 20px;
+
+.rate_display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
-.rate-component-container{
-    width: 580px;
-    color: #333;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
+.rate-component-container {
+  width: 580px;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.rate-component-container:hover{
-    cursor: pointer;
+.rate-component-container:hover {
+  cursor: pointer;
 }
 
-.rate-header{
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
+.rate-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.rate-usd{
-    
-    font-size: 1.2em;
-    color: #666;
+.rate-usd {
+  font-size: 1.2em;
+  color: #666;
 }
 
 .searchBar {
-    width: 300px; /* Adjust width as needed */
-    padding: 8px;
-    border: 3px solid #000000; /* Border color */
-    border-radius: 4px;
-    outline: none;
-  }
+  width: 300px; /* Adjust width as needed */
+  padding: 8px;
+  border: 3px solid #000000; /* Border color */
+  border-radius: 4px;
+  outline: none;
+}
 
-.search-container{
-    margin-bottom: 20px;
-  }
+.search-container {
+  margin-bottom: 20px;
+}
+
+.currency-converter-container select,
+.currency-converter-container input,
+.currency-converter-container button {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333; /* Text color */
+  background-color: #fff; /* Background color */
+}
+
+.currency-converter-container button {
+  background-color: #007bff; /* Adjust the color as needed */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.currency-converter-container button:hover {
+  background-color: #0056b3; /* Adjust the color as needed */
+}
+
+.currency-converter-container p {
+  font-size: 16px;
+  color: #007bff; /* Match the button color or choose a complementary color */
+  margin-top: 10px;
+  background-color: #f0f8ff; /* Light blue background color, adjust as needed */
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dark mode styles */
+.dark-mode .rate-component-container {
+  background-color: #222; /* Dark mode background color */
+  color: #fff; /* Dark mode text color */
+  border-color: #444; /* Dark mode border color */
+}
+
+.dark-mode .searchBar {
+  border-color: #fff; /* Dark mode border color for search bar */
+}
+
+.dark-mode .currency-converter-container select,
+.dark-mode .currency-converter-container input,
+.dark-mode .currency-converter-container button {
+  color: #fff; /* Dark mode text color */
+  background-color: #333; /* Dark mode background color */
+}
+
+.dark-mode .currency-converter-container button {
+  background-color: #0056b3; /* Dark mode button color */
+}
+
+.dark-mode .currency-converter-container button:hover {
+  background-color: #007bff; /* Dark mode button hover color */
+}
+
+.dark-mode .currency-converter-container p {
+  color: #0056b3; /* Dark mode text color for converted amount */
+  background-color: #333; /* Dark mode background color for converted amount */
+}

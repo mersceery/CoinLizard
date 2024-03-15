@@ -1,34 +1,47 @@
+/* TrendingPage.css */
 .table-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .table-container table {
-    border-collapse: collapse;
-    width: 50%;
-  }
-  
-  .table-container th,
-  .table-container td {
-    border: 1px solid #000000;
-    text-align: left;
-    padding: 8px; /* Add padding to create space between columns */
-  }
-  
-  .table-container th {
-    background-color: #ffffff;
-  }
+  border-collapse: collapse;
+  width: 50%;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+.table-container th {
+  background-color: #ffffff;
+}
 
 .home-tabs-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
+
 .coin-link {
-  display: contents;
+  display: flex;
+  align-items: center;
   text-decoration: none; /* Optional: Remove default link underline */
+}
+
+.coin-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.coin-name {
+  text-transform: uppercase; /* Convert the coin name to uppercase */
 }

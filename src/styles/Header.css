@@ -1,0 +1,69 @@
+/* Header.css */
+:root {
+    --toggle-bg: #ccc; /* Adjust the background color for the toggle */
+    --toggle-fg: #333; /* Adjust the foreground color for the slider */
+    --primary-text-color: #000; /* Adjust the primary text color */
+  }
+  
+/* Header.css */
+.toggle-container {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+  }
+  
+  .toggle {
+    visibility: hidden;
+  }
+  .slider{
+    margin-top: 3px;
+  }
+
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--primary-text-color);
+    position: relative; /* Ensure positioning context for absolute positioning of slider */
+  }
+  
+  .toggle-label::before {
+    content: "";
+    height: 1em;
+    width: 2em;
+    border-radius: 1em;
+    background-color: var(--toggle-bg);
+    margin-right: 0.5em;
+    transition: background-color 250ms ease-in-out;
+    position: absolute; /* Absolute positioning relative to toggle-label */
+  }
+  
+  .toggle-label .slider {
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+    height: 0.6em;
+    width: 0.6em;
+    border-radius: 50%;
+    background-color: var(--toggle-fg);
+    transition: transform 250ms ease-in-out;
+  }
+  
+  .toggle:checked + .toggle-label::before {
+    background-color: var(--toggle-fg);
+  }
+  
+  .toggle:checked + .toggle-label .slider {
+    transform: translateX(1em);
+    background-color: var(--toggle-bg);
+
+  }
+  /* Header.css */
+.toggle-label span.mode-text {
+    margin-left:55px; /* Adjust the margin-left as needed */
+    color: #ccc;
+    font-size: 20px;
+  }
+  
+  

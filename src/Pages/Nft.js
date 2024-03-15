@@ -6,12 +6,15 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate, useParams } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 
 function Nft() {
   const [nftList, setNFTList] = useState([]);
   const [nftDetailsList, setNFTDetailsList] = useState([]);
   const navigate = useNavigate();
   const { id } = useParams();
+  const [dropdownTitle, setDropdownTitle] = useState("All Chains"); 
+  const [isDarkMode, setIsDarkMode] = useLocalStorage("isDark", false); // Add dark mode state
 
   useEffect(() => {
     async function fetchData() {
@@ -89,7 +92,7 @@ function Nft() {
     }
   }, [id]);
 
-  const handleDropdownSelection = (platformId) => {
+  const handleDropdownSelection = (platformId,title) => {
     if (platformId === 'all') {
       navigate("/nft");
       fetchDetailsForIDs(platformId);
@@ -97,6 +100,8 @@ function Nft() {
         navigate(`/nft/${platformId}`);
       fetchDetailsForIDs(platformId);
     }
+    setDropdownTitle(title); // Update dropdown title
+
   };
 
 
@@ -111,16 +116,22 @@ function Nft() {
     </LineChart>
   );
 
+      // Toggle dark mode function
+      const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+      };
+
   return (
-    <>
-      <Header />
-      <div>
+    
+      <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+    <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div className="nft-table-container">
         <h1 className="nft-header">NFT</h1>
-        <DropdownButton id="dropdown-basic-button" title="All Chains">
-          <Dropdown.Item onClick={() => handleDropdownSelection('all')}>All Chains</Dropdown.Item>
-          <Dropdown.Item onClick={() => handleDropdownSelection('ethereum')}>Ethereum</Dropdown.Item>
-          <Dropdown.Item onClick={() => handleDropdownSelection('optimistic-ethereum')}>Optimism</Dropdown.Item>
-          <Dropdown.Item onClick={() => handleDropdownSelection('polygon-pos')}>Polygon</Dropdown.Item>
+        <DropdownButton id="dropdown-basic-button" title={dropdownTitle}>
+          <Dropdown.Item onClick={() => handleDropdownSelection('all', 'All Chains')}>All Chains</Dropdown.Item>
+          <Dropdown.Item onClick={() => handleDropdownSelection('ethereum', 'Ethereum')}>Ethereum</Dropdown.Item>
+          <Dropdown.Item onClick={() => handleDropdownSelection('optimistic-ethereum', 'Optimism')}>Optimism</Dropdown.Item>
+          <Dropdown.Item onClick={() => handleDropdownSelection('polygon-pos', 'Polygon')}>Polygon</Dropdown.Item>
           {/* Add more Dropdown.Item elements for other chains */}
         </DropdownButton>
         <table>
@@ -168,7 +179,8 @@ function Nft() {
           </tbody>
         </table>
       </div>
-    </>
+      </div>
+   
   );
 };
 

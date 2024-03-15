@@ -8,6 +8,7 @@ import Exchanges from './Pages/Exchanges';
 import Rates from './Pages/Rates';
 import TrendingPage from './Pages/TrendingPage';
 import Nft from './Pages/Nft';
+import ChatRoom from './Pages/ChatRoom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -19,7 +20,8 @@ root.render(
     <Route  path='/trending' element={<TrendingPage></TrendingPage>} />
     <Route  path='/nft' element={<Nft></Nft>} />
     <Route  path='/nft/:id' element={<Nft></Nft>} />
-    
+    <Route  path='/chat' element={<ChatRoom></ChatRoom>} />
+
   </Routes>
   </BrowserRouter>
 );

@@ -3,6 +3,7 @@ import api from "../api/axiosConfig";
 import Header from "../components/Header";
 import Rate from "../components/Rate";
 import "../styles/Rate.css";
+import useLocalStorage from 'use-local-storage';
 
 function Rates() {
   const [rates, setRates] = useState([]);
@@ -11,6 +12,7 @@ function Rates() {
   const [amount, setAmount] = useState("");
   const [convertedAmount, setConvertedAmount] = useState("");
   const [filteredRates, setFilteredRates] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useLocalStorage("isDark", false); // Add dark mode state
 
   const getRates = async () => {
     try {
@@ -66,9 +68,15 @@ function Rates() {
     setSelectedCurrency(currencyId);
   };
 
+    // Toggle dark mode function
+    const toggleDarkMode = () => {
+      setIsDarkMode(!isDarkMode);
+    };
+
   return (
     <>
-      <Header />
+      <div className={`Rate-App ${isDarkMode ? 'dark-mode' : ''}`}>
+    <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div className="rate_display">
         <div className="currency-converter-container">
           <select onChange={handleCurrencyChange} value={selectedCurrency}>
@@ -87,7 +95,7 @@ function Rates() {
           />
           <button onClick={convertToUSD}>Convert to USD</button>
           {convertedAmount && (
-            <p>Converted Amount to USD: {convertedAmount}</p>
+            <p>Converted Amount in USD: {convertedAmount}</p>
           )}
         </div>
 
@@ -114,6 +122,7 @@ function Rates() {
         ) : (
           <p>No matching fiat rates found</p>
         )}
+      </div>
       </div>
     </>
   );

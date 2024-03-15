@@ -1,0 +1,108 @@
+.chat-tab {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    min-height: 50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out; /* Add ease-in-out for smooth animation */
+    z-index: 9999;
+}
+.member-list, .chat-messages{
+ margin-top: 40px;
+ max-width: 80%;
+}
+
+.tab-heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+.toggle-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+    z-index: 100000000000;
+}
+
+.toggle-button:hover {
+    background-color: #999;
+}
+
+.chat-tab.open {
+    height: auto;
+    min-height: 400px;
+}
+
+.chat-tab.closed {
+    height: 50px;
+    min-height: 50px;
+    overflow: hidden;
+}
+
+.chat-content {
+   
+    height: calc(100% - 50px);
+}
+
+.send-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.input-message {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.send-button {
+    min-width: 80px;
+}
+
+/* Add animation for slide effect */
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(100%);
+    }
+}
+
+/* Apply animation to the chat tab */
+.chat-tab.open {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.chat-tab.closed {
+    animation: slideOut 0.3s ease-in-out;
+}

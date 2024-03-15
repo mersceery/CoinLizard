@@ -10,12 +10,15 @@ import {
 import graphData from "../data/graphData";
 import { useParams } from 'react-router-dom';
 import Header from "./Header";
+import '../styles/ShowGraph.css'; // Import your CSS file for styling
 
 
 function ShowGraph() {
   const [chartData, setChartData] = useState([]); // State to hold the fetched data
     const [coinData, setCoinData] = useState([]); // State to hold the fetched data
     const { id } = useParams();
+    const [isDarkMode, setIsDarkMode] = useState(false); // Add dark mode state
+
   useEffect(() => {
     // Fetch data when the component mounts
     graphData(id)
@@ -28,9 +31,16 @@ function ShowGraph() {
         console.error('Error fetching graph data:', error);
       });
   }, []);
+
+      // Toggle dark mode function
+      const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+      };
+
   return (
     <>
-    <Header></Header>  
+     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
+    <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />  
     
     <div className="graph-container">
           <div className="graph-coin-title">
@@ -109,7 +119,7 @@ function ShowGraph() {
             </tbody>
         </table>
     </div>
-)}
+)} </div>
     </div>
     </>
   );
