@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Rate from "../components/Rate";
 import "../styles/Rate.css";
 import useLocalStorage from 'use-local-storage';
+import ChatTab from '../components/ChatTab';
 
 function Rates() {
   const [rates, setRates] = useState([]);
@@ -77,6 +78,8 @@ function Rates() {
     <>
       <div className={`Rate-App ${isDarkMode ? 'dark-mode' : ''}`}>
     <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+    <ChatTab />
+
       <div className="rate_display">
         <div className="currency-converter-container">
           <select onChange={handleCurrencyChange} value={selectedCurrency}>

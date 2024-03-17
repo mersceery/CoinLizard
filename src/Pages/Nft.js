@@ -7,6 +7,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
+import ChatTab from '../components/ChatTab';
 
 function Nft() {
   const [nftList, setNFTList] = useState([]);
@@ -125,6 +126,8 @@ function Nft() {
     
       <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
     <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+    <ChatTab />
+
       <div className="nft-table-container">
         <h1 className="nft-header">NFT</h1>
         <DropdownButton id="dropdown-basic-button" title={dropdownTitle}>

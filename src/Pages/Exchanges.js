@@ -4,6 +4,7 @@ import Exchange from "../components/Exchange";
 import Header from "../components/Header";
 import ShowExchangeGraph from "../components/ShowExchangeGraph";
 import useLocalStorage from 'use-local-storage';
+import ChatTab from '../components/ChatTab';
 
 function Exchanges() {
   const [exchanges, setExchanges] = useState([]);
@@ -31,7 +32,8 @@ function Exchanges() {
     <>
     <div className={`App ${isDarkMode ? 'dark-mode' : ''}`}>
     <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-    
+    <ChatTab />
+
       <div className="exchange_display">
         {exchanges.map((exchange, index) => (
           <div> 

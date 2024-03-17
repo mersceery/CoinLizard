@@ -1,73 +1,72 @@
-import './App.css';
-import { useEffect, useState } from 'react';
-import Coin from './components/Coin';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import HeroSlider from './components/HeroSlider';
-import { coinData } from './data/coinData';
-import Header from './components/Header';
-import HomeTabs from './components/HomeTabs';
-import MainPageTable from './components/MainPageTable';
-import MostVisitedTable from './components/MostVisitedTable';
-import FearAndGreenIndex from './components/FearAndGreedIndex';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import Header from '../components/Header';
+import HomeTabs from '../components/HomeTabs';
 import useLocalStorage from 'use-local-storage';
-import ChatTab from './components/ChatTab';
+import '../styles/TrendingPage.css';
+import '../App.css';
+import Coin from '../components/Coin';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeroSlider from '../components/HeroSlider';
+import { coinData } from '../data/coinData';
+import MainPageTable from '../components/MainPageTable';
+import MostVisitedTable from '../components/MostVisitedTable';
+import FearAndGreenIndex from '../components/FearAndGreedIndex';
+import { Link } from 'react-router-dom';
+import ChatTab from '../components/ChatTab';
 
-function App() {
+function CombinedPage() {
+  const [storedFavorites, setStoredFavorites] = useState([]);
   const [coins, setCoins] = useState([]);
   const [priceUSD, setPriceUSD] = useState([]);
   const [searchWord, setSearchWord] = useState('');
-  const bitcoin = coins.find(crypto => crypto.id === "bitcoin");
-  const [isDarkMode, setIsDarkMode] = useLocalStorage("isDark", false); // Add dark mode state
+  const [bitcoinPrice, setBitcoinPrice] = useState(0); // New state variable for bitcoin price
+  const [isDarkMode, setIsDarkMode] = useLocalStorage("isDark", false);
   const [favorites, setFavorites] = useState([]);
 
-  // Initialize favorites state using value from localStorage
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
     if (storedFavorites) {
-      setFavorites(storedFavorites);
+      setStoredFavorites(storedFavorites);
     }
   }, []);
 
   useEffect(() => {
     coinData()
       .then((coinData) => {
-        setCoins(coinData.trending.data);
+        const filteredCoins = coinData.trending.data.filter(coin => storedFavorites.includes(coin.id));
+        setCoins(filteredCoins);
         setPriceUSD(coinData.priceBtc);
+        const bitcoinData = filteredCoins.find(crypto => crypto.id === "bitcoin"); // Find bitcoin data from filteredCoins
+        if (bitcoinData) {
+          setBitcoinPrice(bitcoinData.current_price); // Set bitcoin price
+        }
       })
       .catch((error) => {
         console.error('Error setting coin data:', error);
       });
-
+  
     const interval = setInterval(() => {
       coinData();
     }, 600000);
-
+  
     return () => clearInterval(interval);
-  }, []);
+  }, [storedFavorites]);
+  
 
-  const filterCoins = coins.filter((coin) => {
-    return coin.name.toLowerCase().includes(searchWord.toLowerCase());
-  });
-
-  // Toggle dark mode function
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  // Toggle favorite status of a coin
-  const toggleFavorite = (coinId) => {
-    setFavorites(prevFavorites => {
-      const updatedFavorites = prevFavorites.includes(coinId) 
-        ? prevFavorites.filter(id => id !== coinId) 
-        : [...prevFavorites, coinId];
-        
-      // Save updated favorites to localStorage
-      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-      
-      return updatedFavorites;
-    });
+
+  const removeFromFavorites = (coinId) => {
+    setStoredFavorites(prevFavorites => prevFavorites.filter(id => id !== coinId));
+    setCoins(prevCoins => prevCoins.filter(coin => coin.id !== coinId));
+    localStorage.setItem('favorites', JSON.stringify(storedFavorites.filter(id => id !== coinId)));
   };
+
+  const filterCoins = coins.filter((coin) => {
+    return coin.name.toLowerCase().includes(searchWord.toLowerCase());
+  });
 
   return (
     <>
@@ -99,7 +98,7 @@ function App() {
             ></input>
           </div>
           <div className="table-container">
-            <h2>All Coins</h2>
+            <h2>Favorite Coins</h2>
             <table>
               <thead>
                 <tr>
@@ -107,7 +106,7 @@ function App() {
                   <th>Symbol</th>
                   <th>Price in BTC</th>
                   <th>Price in USD</th>
-                  <th>Favorite</th> {/* New column for favorite button */}
+                  <th>Favorite</th>
                 </tr>
               </thead>
               <tbody>
@@ -124,15 +123,10 @@ function App() {
                       </Link>
                     </td>
                     <td>{coin.symbol.toUpperCase()}</td>
-                    <td>{(coin.current_price / bitcoin.current_price).toFixed(12)}</td>
+                    <td>{bitcoinPrice ? (coin.current_price / bitcoinPrice).toFixed(12) : ''}</td>
                     <td>${coin.current_price}</td>
                     <td>
-                      <button
-                        onClick={() => toggleFavorite(coin.id)}
-                        className={favorites.includes(coin.id) ? 'favorite' : ''}
-                      >
-                        {favorites.includes(coin.id) ? 'Remove' : 'Add'}
-                      </button>
+                      <button onClick={() => removeFromFavorites(coin.id)}>Remove from Favorites</button>
                     </td>
                   </tr>
                 ))}
@@ -145,4 +139,4 @@ function App() {
   );
 }
 
-export default App;
+export default CombinedPage;

@@ -17,6 +17,11 @@ function HomeTabs() {
             Trending
           </NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" activeClassName="active" to="/favorited-coins">
+            Favorite
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
