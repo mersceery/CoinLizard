@@ -1,0 +1,126 @@
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-gap: 20px;
+}
+
+.article {
+  display: flex; 
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+  max-width: 200px; 
+  height: auto; 
+  object-fit: cover;
+}
+
+.article-content {
+  flex: 1; 
+  padding: 20px;
+}
+
+.article h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.article p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.article-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 10px;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article-actions button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.article-actions button:hover {
+  background-color: #0056b3;
+}
+
+input[type="text"],
+textarea,
+button[type="submit"] { 
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button, button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.dark-mode {
+  background-color: #1f1f1f; 
+  color: #fff; 
+
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  input[type="text"],
+  textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+
+  
+  .article {
+    background-color: #333;
+  }
+}

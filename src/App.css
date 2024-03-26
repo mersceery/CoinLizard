@@ -17,7 +17,7 @@ body{
 }
 
 .carousel {
-  width: 60%; /* Set the desired width */
+  width: 60%; 
   margin: auto; /* Center the Carousel horizontally */
   border-radius: 55px 55px 55px 55px;
   overflow: hidden; /* Hide the Carousel items that are outside the viewport */

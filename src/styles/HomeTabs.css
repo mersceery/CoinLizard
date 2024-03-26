@@ -1,6 +1,6 @@
 .nav-pills .nav-item .active {
-    background-color: #86d0fa; /* Change this to your desired active tab color */
-    color: #0077ff; /* Change this to your desired text color for the active tab */
-    font-weight: bold; /* Add any additional styles for the active tab */
+    background-color: #86d0fa;
+    color: #0077ff; 
+    font-weight: bold; 
   }
 
