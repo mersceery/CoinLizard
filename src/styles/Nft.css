@@ -1,5 +1,5 @@
 
-/* Style for the table */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -8,7 +8,7 @@ table {
 
 /* Style for table header cells */
 th {
-  background-color: #f2f2f2; /* Light mode background color */
+  background-color: #f2f2f2; 
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
@@ -22,22 +22,22 @@ td {
 
 /* Dark mode styles */
 .dark-mode table th {
-  background-color: #333; /* Dark mode background color for table header cells */
-  color: #fff; /* Change text color to white in dark mode */
+  background-color: #333;  
+  color: #fff; 
 }
 
 .dark-mode table td {
-  background-color: #555; /* Dark mode background color for table data cells */
-  color: #fff; /* Change text color to white in dark mode */
+  background-color: #555; 
+  color: #fff; 
 }
 
 /* Hover effect for rows */
 tbody tr:hover {
-  background-color: #ffffff; /* Light mode hover background color */
+  background-color: #ffffff; 
 }
 
 .dark-mode tbody tr:hover {
-  background-color: #666; /* Dark mode hover background color */
+  background-color: #666; 
 }
 
 .nft-header{

@@ -106,3 +106,45 @@
 .chat-tab.closed {
     animation: slideOut 0.3s ease-in-out;
 }
+
+/* Add dark mode styles */
+.dark-mode .chat-tab {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    max-height: 610px;
+}
+
+.dark-mode .tab-heading {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .toggle-button {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode .toggle-button:hover {
+    background-color: #777;
+}
+
+.dark-mode .message {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode .input-message {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #777;
+}
+
+.dark-mode .send-button {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode .send-button:hover {
+    background-color: #777;
+}

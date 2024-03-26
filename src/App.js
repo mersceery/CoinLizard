@@ -129,7 +129,7 @@ function App() {
                     <td>
                       <button
                         onClick={() => toggleFavorite(coin.id)}
-                        className={favorites.includes(coin.id) ? 'favorite' : ''}
+                        className={favorites.includes(coin.id) ? 'favorite' : 'favorite-btn'}
                       >
                         {favorites.includes(coin.id) ? 'Remove' : 'Add'}
                       </button>

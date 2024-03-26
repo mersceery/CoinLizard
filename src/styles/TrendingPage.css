@@ -33,7 +33,7 @@
 .coin-link {
   display: flex;
   align-items: center;
-  text-decoration: none; /* Optional: Remove default link underline */
+  text-decoration: none; 
 }
 
 .coin-icon {
@@ -43,5 +43,5 @@
 }
 
 .coin-name {
-  text-transform: uppercase; /* Convert the coin name to uppercase */
+  text-transform: uppercase; 
 }

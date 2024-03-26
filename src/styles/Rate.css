@@ -61,14 +61,14 @@
 }
 
 .currency-converter-container button:hover {
-  background-color: #0056b3; /* Adjust the color as needed */
+  background-color: #0056b3; 
 }
 
 .currency-converter-container p {
   font-size: 16px;
-  color: #007bff; /* Match the button color or choose a complementary color */
+  color: #007bff; 
   margin-top: 10px;
-  background-color: #f0f8ff; /* Light blue background color, adjust as needed */
+  background-color: #f0f8ff; 
   border-radius: 4px;
   padding: 8px;
   display: flex;
@@ -77,31 +77,31 @@
 
 /* Dark mode styles */
 .dark-mode .rate-component-container {
-  background-color: #222; /* Dark mode background color */
-  color: #fff; /* Dark mode text color */
-  border-color: #444; /* Dark mode border color */
+  background-color: #222; 
+  color: #fff; 
+  border-color: #444; 
 }
 
 .dark-mode .searchBar {
-  border-color: #fff; /* Dark mode border color for search bar */
+  border-color: #fff; 
 }
 
 .dark-mode .currency-converter-container select,
 .dark-mode .currency-converter-container input,
 .dark-mode .currency-converter-container button {
-  color: #fff; /* Dark mode text color */
-  background-color: #333; /* Dark mode background color */
+  color: #fff; 
+  background-color: #333; 
 }
 
 .dark-mode .currency-converter-container button {
-  background-color: #0056b3; /* Dark mode button color */
+  background-color: #0056b3; 
 }
 
 .dark-mode .currency-converter-container button:hover {
-  background-color: #007bff; /* Dark mode button hover color */
+  background-color: #007bff; 
 }
 
 .dark-mode .currency-converter-container p {
-  color: #0056b3; /* Dark mode text color for converted amount */
-  background-color: #333; /* Dark mode background color for converted amount */
+  color: #0056b3;
+  background-color: #333; 
 }

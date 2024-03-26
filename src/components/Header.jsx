@@ -33,6 +33,7 @@ function Header({ toggleDarkMode, isDarkMode }) {
             <Nav.Link href="/rates">Rates</Nav.Link>
             <Nav.Link href="/nft">NFT</Nav.Link>
             <Nav.Link href="/chat">Chat Room</Nav.Link>
+            <Nav.Link href="/news">News</Nav.Link>
           </Nav>
           <input
             type="checkbox"

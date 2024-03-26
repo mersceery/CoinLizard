@@ -98,7 +98,7 @@ function Rates() {
           />
           <button onClick={convertToUSD}>Convert to USD</button>
           {convertedAmount && (
-            <p>Converted Amount in USD: {convertedAmount}</p>
+            <p className="convertedAmount">Converted Amount in USD: {convertedAmount}</p>
           )}
         </div>
 

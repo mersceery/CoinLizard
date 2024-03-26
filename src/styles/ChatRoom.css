@@ -10,9 +10,9 @@ code {
 input {
     padding: 10px;
     font-size: 1.2em;
-    color: #333; /* Text color */
-    background-color: #fff; /* Background color */
-    border: 1px solid #ccc; /* Border color */
+    color: #333;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
     border-radius: 10px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     
@@ -20,7 +20,7 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #007bff; /* Focus border color */
+    border-color: #007bff; 
 }
 
 button {
@@ -36,7 +36,7 @@ button {
 }
 
 button:hover {
-    background: #008000; /* Hover background color */
+    background: #008000; 
 }
 
 .container {
@@ -47,11 +47,11 @@ button:hover {
     position: fixed;
     padding: 30px;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
-    top: 50%; /* Adjust the top position */
-    left: 50%; /* Adjust the left position */
-    transform: translate(-50%, -50%); /* Centering trick */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     display: flex;
-    background-color: #fff; /* Light mode background color */
+    background-color: #fff; 
     border-radius: 10px;
 }
 
@@ -62,19 +62,19 @@ button:hover {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    background-color: #fff; /* Light mode background color */
+    background-color: #fff; 
     border-radius: 10px;
     
 }
 
 .enterUsername-button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 
 .dark-mode .register,
 .dark-mode .chat-box {
-    background-color: #222; /* Dark mode background color */
-    color: #fff; /* Dark mode text color */
+    background-color: #222; 
+    color: #fff; 
 }
 
 .member-list {
@@ -94,14 +94,14 @@ button:hover {
 .chat-messages {
     height: 80%;
     border: 1px solid #000;
-    background-color: #fff; /* Light mode background color */
+    background-color: #fff; 
     border-radius: 10px;
     overflow-y: auto;
 }
 
 .dark-mode .chat-messages {
-    background-color: #333; /* Dark mode background color */
-    color: #fff; /* Dark mode text color */
+    background-color: #333; 
+    color: #fff; 
 }
 
 .send-message {
@@ -113,15 +113,15 @@ button:hover {
 .input-message {
     width: 90%;
     border-radius: 50px;
-    color: #333; /* Text color */
-    background-color: #fff; /* Background color */
-    border: 1px solid #ccc; /* Border color */
+    color: #333; 
+    background-color: #fff; 
+    border: 1px solid #ccc; 
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .input-message:focus {
     outline: none;
-    border-color: #007bff; /* Focus border color */
+    border-color: #007bff; 
 }
 
 .send-button {
@@ -137,7 +137,7 @@ button:hover {
 }
 
 .send-button:hover {
-    background: #008000; /* Hover background color */
+    background: #008000; 
 }
 
 ul {
@@ -152,29 +152,29 @@ ul {
     cursor: pointer;
     margin: 5px 2px;
     box-shadow: 0 8px 8px -4px lightblue;
-    color: #333; /* Text color */
+    color: #333; 
     border-radius: 10px;
 }
 
 .member.active {
     background: blueviolet;
-    color: #fff; /* Text color */
+    color: #fff; 
 }
 
 .member:hover {
     background: grey;
-    color: #fff; /* Text color */
+    color: #fff; 
 }
 
 .avatar {
     background-color: cornflowerblue;
     padding: 3px 5px;
     border-radius: 5px;
-    color: #fff; /* Text color */
+    color: #fff; 
 }
 
 .avatar.self {
-    color: #000; /* Text color */
+    color: #000; 
     background-color: greenyellow;
 }
 
@@ -185,7 +185,7 @@ ul {
     flex-direction: row;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     margin: 5px 10px;
-    background-color: #fff; /* Light mode background color */
+    background-color: #fff; 
     border-radius: 10px;
 }
 
@@ -199,6 +199,6 @@ ul {
 }
 
 .dark-mode .message {
-    background-color: #333; /* Dark mode background color */
-    color: #fff; /* Dark mode text color */
+    background-color: #333; 
+    color: #fff; 
 }
