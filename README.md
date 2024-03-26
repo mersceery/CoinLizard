@@ -1,3 +1,7 @@
+# CoinLizard Demo Video
+[![Watch the video](https://s2.coinmarketcap.com/static/img/coins/200x200/26417.png)](https://www.youtube.com/embed/5DP5_h7kHDU)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
