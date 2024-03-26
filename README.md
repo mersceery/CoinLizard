@@ -1,5 +1,6 @@
 # CoinLizard Demo Video
-[![Watch the video](https://s2.coinmarketcap.com/static/img/coins/200x200/26417.png)](https://www.youtube.com/embed/5DP5_h7kHDU)
+Please Click the image below to view the video
+[![Watch the video](https://upload.wikimedia.org/wikipedia/commons/3/3f/YOUTUBE--SOCIAL-PLAY.png)](https://www.youtube.com/embed/5DP5_h7kHDU)
 
 
 # Getting Started with Create React App
