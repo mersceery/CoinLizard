@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    image: backend-image:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/cryptonewsdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: postgres
+      POSTGRES_DB: cryptonewsdb
+
+  frontend:
+    image: frontend-image:latest
+    ports:
+      - "3000:3000"

@@ -1,22 +1,18 @@
 import React from 'react';
-import { Card } from 'flowbite-react';
+import { Card, CardMedia } from '@mui/material';
 
-function FearAndGreenIndex() {
+function FearAndGreedIndex() {
   const ImageUrlFearAndGreed = 'https://pbs.twimg.com/media/GIWssrEaYAAKWZQ.png';
 
   return (
-    <>
-      <Card className="">
-        
-          <img
-            src={ImageUrlFearAndGreed}
-            alt="Profile"
-            className="w-full h-full object-fill"
-          />
-        
-      </Card>
-    </>
+    <Card style={{maxHeight: '300px'}}>
+      <CardMedia
+        component="img"
+        src={ImageUrlFearAndGreed}
+        alt="Fear and Greed Index"
+      />
+    </Card>
   );
 }
 
-export default FearAndGreenIndex;
+export default FearAndGreedIndex;
