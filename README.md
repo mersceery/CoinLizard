@@ -4,7 +4,7 @@ Please Click the image below to view the video
 
 # CoinLizard
 
-CoinLizard is a project developed by Renaldy Lewa, aimed at providing functionalities similar to Coingecko/Coinmarketcap. It was developed with a tech stack including React.js, Java, Java Spring Boot, Spring Data JPA, Spring WebSocket, Maven, Selenium (Python), and PostgreSQL.
+CoinLizard is a project developed by Renaldy Lewa, aimed at providing functionalities similar to Coingecko/Coinmarketcap. It was developed with a tech stack including React.js, Java, Java Spring Boot, Spring Data JPA, Spring WebSocket, Maven, Selenium (Python), Docker and PostgreSQL.
 
 ## Features
 
@@ -12,6 +12,7 @@ CoinLizard is a project developed by Renaldy Lewa, aimed at providing functional
 - **Chat Room**: Allows users to engage in discussions related to cryptocurrencies.
 - **Currency Conversion**: Enables users to convert between different currencies.
 - **Cryptocurrency News**: Offers the latest news and updates about cryptocurrencies and CRUD operation for those news.
+- **List of NFT**: Provides detailed information about various NFTs.
 
 ## Technologies Used
 
@@ -20,6 +21,7 @@ CoinLizard is a project developed by Renaldy Lewa, aimed at providing functional
 - **Maven**: Utilized as the build automation tool and package manager for Java projects.
 - **Selenium (Python)**: Implemented for automated web testing.
 - **PostgreSQL**: Used as the relational database management system.
+- **Docker**: Used with the aim for Consistent Development Environment,  Portability, Scalability, Dependency Management and Version Control and Collaboration.
 
 ## API Integration
 
@@ -31,11 +33,14 @@ CoinLizard integrates multiple APIs to fetch data from different sources such as
 - Leveraged React.js to build an interactive and user-friendly frontend.
 - Integrated Selenium for automated web testing, ensuring the reliability of the application.
 - Utilized PostgreSQL for database management, supporting CRUD operations and storing essential data.
+- Used Docker with the aim for Consistent Development Environment,  Portability, Scalability, Dependency Management and Version Control and Collaboration.
 
 CoinLizard serves as a comprehensive platform for cryptocurrency enthusiasts, offering essential information, discussions, and news in one centralized location.
 
 For more details, visit the [CoinLizard GitHub repository](https://github.com/mersceery/CoinLizard).
 
+# Pull CoinLizard Docker Images
+To pull the Docker Images, visit [renaldycl Docker's Hub](https://hub.docker.com/u/renaldycl).
 
 # Getting Started with Create React App
 
